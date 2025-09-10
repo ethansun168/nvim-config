@@ -37,6 +37,7 @@ map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 map("x", "p", '"_dP')
 
+-- Copy into clipboard buffer
 map("n", "<leader>y", '"+y')
 
 -- DAP keymaps
