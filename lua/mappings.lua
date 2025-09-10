@@ -37,6 +37,8 @@ map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 map("x", "p", '"_dP')
 
+map("n", "<leader>y", '"+y')
+
 -- DAP keymaps
 local dap = require "dap"
 map("n", "<leader>db", dap.toggle_breakpoint, {})
