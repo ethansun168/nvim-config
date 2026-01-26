@@ -1,7 +1,7 @@
 require "nvchad.mappings"
 local map = vim.keymap.set
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
+-- map("n", ";", ":", { desc = "CMD enter command mode" })
 
 local builtin = require "telescope.builtin"
 map("n", "<leader>pf", builtin.find_files, { desc = "find files" })
@@ -37,8 +37,11 @@ map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 map("x", "p", '"_dP')
 
--- Copy into clipboard buffer
+-- Copy and paste into clipboard buffer
 map("n", "<leader>y", '"+y')
+map("x", "<leader>y", '"+y')
+map("n", "<leader>p", '"+p')
+map("x", "<leader>p", '"+p')
 
 -- DAP keymaps
 local dap = require "dap"

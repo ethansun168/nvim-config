@@ -13,3 +13,4 @@ vim.opt.expandtab = true
 vim.opt.termguicolors = true
 
 vim.opt.swapfile = false
+vim.opt.scrolloff = 4

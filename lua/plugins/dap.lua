@@ -16,8 +16,8 @@ return {
           numhl = "",
         })
         -- Bold green (like breakpoint's red)
-        vim.cmd [[ 
-            highlight DapStoppedGreen guifg=#00ff00 ctermfg=10 gui=bold cterm=bold 
+        vim.cmd [[
+            highlight DapStoppedGreen guifg=#00ff00 ctermfg=10 gui=bold cterm=bold
             highlight DapStoppedLine  guibg=#2a3a2a ctermbg=235
         ]]
       end)
@@ -28,6 +28,10 @@ return {
           request = "launch",
           program = function()
             return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+          end,
+          args = function()
+            local input = vim.fn.input("Arguments (space-separated): ")
+            return vim.split(input, " +")
           end,
           cwd = "${workspaceFolder}",
           stopAtBeginningOfMainSubprogram = false,
