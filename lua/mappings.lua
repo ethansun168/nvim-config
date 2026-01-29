@@ -30,6 +30,22 @@ map({ "n", "t" }, "<A-j>", function()
   require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
 end, { desc = "terminal toggleable horizontal term" })
 
+map({ "n", "t" }, "<A-i>", function()
+  require("nvchad.term").toggle(
+    {
+      pos = "float",
+      id = "floatTerm",
+      float_opts = {
+        border = "rounded"
+      }
+    }
+  )
+end, { desc = "terminal toggle floating term" })
+
+vim.keymap.set("n", "<C-w>d", function()
+  vim.diagnostic.open_float({ border = "rounded" })
+end, { desc = "Floating diagnostic" })
+
 -- Move highlighted lines
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
@@ -55,3 +71,5 @@ map("n", "<leader>dx", dap.terminate, {})
 map("n", "<leader>?", function()
   require("dapui").eval(nil, { enter = true })
 end)
+
+vim.keymap.del("n", "<tab>")

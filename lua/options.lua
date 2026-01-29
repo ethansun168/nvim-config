@@ -14,3 +14,4 @@ vim.opt.termguicolors = true
 
 vim.opt.swapfile = false
 vim.opt.scrolloff = 4
+vim.opt.winborder = "rounded"
